@@ -13,8 +13,8 @@ from email.mime.multipart import MIMEMultipart
 def sendMail():
 
     msg = MIMEMultipart()
-    user = os.environ.get('id') #Enter sender's email address
-    passwd = os.environ.get('pass')
+    user = 'gdrivebot12@gmail.com' #Enter sender's email address
+    passwd = 'qwerty@123'
     msg['Subject'] = "Sem-V Result is now live!"
     msg['From'] = user
     msg['To'] = "abhayruparel2000@gmail.com, rushil.rc@gmail.com" #Enter receiver's email address
