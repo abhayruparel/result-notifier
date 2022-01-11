@@ -7,7 +7,9 @@ import os
 
 def generateImage(filename):
     driver = webdriver.Chrome()
-
+    chrome_options = Options()
+    chrome_options.add_argument('--headless')
+    driver = webdriver.Chrome(options=chrome_options)
     url = "https://result.ganpatuniversity.ac.in/"
 
     driver.get(url)
