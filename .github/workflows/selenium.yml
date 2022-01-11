@@ -22,10 +22,12 @@ jobs:
         #   chromedriver-version: '88.0.4324.96'
       - run: |
           export DISPLAY=:99
+          google-chrome --version
           chromedriver --url-base=/wd/hub &
           sudo Xvfb -ac :99 -screen 0 1280x1024x24 > /dev/null 2>&1 & # optional
           chmod +x installchrome.sh
           ./installchrome.sh
+          google-chrome --version
 
       - name: Setup Python Environment
         uses: actions/setup-python@v2
