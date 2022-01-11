@@ -32,8 +32,8 @@ jobs:
 
       - name: result script
         run: |
-          export id=${{ secrets.ID }}
-          export pass=${{ secrets.PASS }}
+          # export id=${{ secrets.ID }}
+          # export pass=${{ secrets.PASS }}
           python3 result.py
       - uses: mikeal/publish-to-github-action@master
         env:
