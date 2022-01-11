@@ -46,7 +46,7 @@ def compare():
         print("Some Update found")
         os.remove('mScreenShot.png')
         os.rename('nScreenShot.png', 'mScreenShot.png')
-        sendMail()
+        # sendMail()
     else:
         print("No changes found.\nDeleting nScreenShot.png")
         os.remove('nScreenShot.png')
