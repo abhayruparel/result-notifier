@@ -1,7 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.support.ui import Select
 
-mainDriver = webdriver.Chrome('chromeDriver v96')
+mainDriver = webdriver.Chrome(executable_path='chromedriver_win32\chromedriver.exe')
 mainDriver.get('https://result.ganpatuniversity.ac.in/')
 mainDriver.find_element_by_xpath("//select[@name='ddlInst']/option[text()='16 - ICT']").click()
 mainDriver.find_element_by_xpath("//select[@name='ddlDegree']/option[text()='B.TECH-CSE(CS)']").click()
