@@ -29,6 +29,6 @@ jobs:
 
       - name: result script
         run: |
-          export id=${{ secrets.ID }}
-          export pass=${{ secrets.PASS }}
+          set id=${{ secrets.ID }}
+          set pass=${{ secrets.PASS }}
           python3 resultStatus.py
