@@ -6,8 +6,7 @@ import os
 
 
 def generateImage(filename):
-    driver = webdriver.Chrome(
-        executable_path="chromedriver_win32\chromedriver.exe")
+    driver = webdriver.Chrome()
 
     url = "https://result.ganpatuniversity.ac.in/"
 
