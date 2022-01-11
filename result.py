@@ -9,6 +9,7 @@ def generateImage(filename):
     driver = webdriver.Chrome()
     chrome_options = Options()
     chrome_options.add_argument('--headless')
+    chrome_options.add_argument('--no-sandbox')
     driver = webdriver.Chrome(options=chrome_options)
     url = "https://result.ganpatuniversity.ac.in/"
 
