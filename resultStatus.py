@@ -16,7 +16,7 @@ def sendMail():
     user = 'gdrivebot12@gmail.com' #Enter sender's email address
     passwd = 'qwerty@123'
     msg['Subject'] = "Sem-V Result is now live!"
-    msg['From'] = user
+    msg['From'] = f'Result notifier <{user}>'
     msg['To'] = "abhayruparel2000@gmail.com, rushil.rc@gmail.com" #Enter receiver's email address
     msgContent = "https://result.ganpatuniversity.ac.in/"
     Content = MIMEText(msgContent,'plain')
