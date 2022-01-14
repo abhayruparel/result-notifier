@@ -1,5 +1,6 @@
 from selenium import webdriver
 from selenium.webdriver.support.ui import Select
+from selenium.webdriver.chrome.options import Options
 import smtplib
 import mimetypes
 import os
@@ -27,7 +28,11 @@ def sendMail():
     print("E-Mail Sent!")
 
 
-mainDriver = webdriver.Chrome(executable_path='chromedriver_win32\chromedriver.exe')
+chrome_options = Options()
+chrome_options.add_argument('--headless')
+chrome_options.add_argument('--no-sandbox')
+chrome_options.add_argument('--disable-dev-shm-usage')
+mainDriver = webdriver.Chrome(executable_path='chromedriver_win32\chromedriver.exe', chrome_options=chrome_options)
 mainDriver.get('https://result.ganpatuniversity.ac.in/')
 mainDriver.find_element_by_xpath("//select[@name='ddlInst']/option[text()='16 - ICT']").click()
 mainDriver.find_element_by_xpath("//select[@name='ddlDegree']/option[text()='B.TECH-CSE(CS)']").click()
