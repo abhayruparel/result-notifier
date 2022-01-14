@@ -1,4 +1,4 @@
-name: Update in html file
+name: Checking if sem 5 result has declared or not
 
 on:
   push:
