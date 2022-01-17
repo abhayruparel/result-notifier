@@ -30,7 +30,8 @@ chrome_options.add_argument("--headless")
 chrome_options.add_argument("--no-sandbox")
 chrome_options.add_argument("--disable-dev-shm-usage")
 mainDriver = webdriver.Chrome(
-    executable_path="chromedriver_win32\chromedriver.exe", chrome_options=chrome_options
+    # https://github.com/actions/virtual-environments/blob/main/images/win/Windows2019-Readme.md#environment-variables-1
+    executable_path="C:\SeleniumWebDrivers\ChromeDriver", chrome_options=chrome_options
 )
 mainDriver.get("https://result.ganpatuniversity.ac.in/")
 mainDriver.find_element_by_xpath(
