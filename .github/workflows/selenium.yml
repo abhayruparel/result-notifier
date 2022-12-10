@@ -1,11 +1,11 @@
-name: Checking if sem 5 result has declared or not
+name: Checking if sem 7 result has declared or not
 
 on:
   push:
     branches:
       - main
-#   schedule:
-#     - cron: '*/10 * * * *'
+  schedule:
+    - cron: '*/10 * * * *'
 
 jobs:
   build:

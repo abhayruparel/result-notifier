@@ -4,14 +4,14 @@ from selenium.webdriver.chrome.options import Options
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
-
+import os
 
 def sendMail():
 
     msg = MIMEMultipart()
-    user = "gdrivebot12@gmail.com"  # Enter sender's email address
-    passwd = "qwerty@123"
-    msg["Subject"] = "Sem-V Result is now live!"
+    user = os.environ.get('id')  # Enter sender's email address
+    passwd = os.environ.get('pass')
+    msg["Subject"] = "Sem-VII Result is now live!"
     msg["From"] = f"Result notifier <{user}>"
     msg[
         "To"
@@ -29,7 +29,7 @@ chrome_options = Options()
 chrome_options.add_argument("--headless")
 chrome_options.add_argument("--no-sandbox")
 chrome_options.add_argument("--disable-dev-shm-usage")
-mainDriver = webdriver.Chrome()
+mainDriver = webdriver.Chrome(options=chrome_options)
 mainDriver.get("https://result.ganpatuniversity.ac.in/")
 mainDriver.find_element_by_xpath(
     "//select[@name='ddlInst']/option[text()='16 - ICT']"
@@ -37,15 +37,19 @@ mainDriver.find_element_by_xpath(
 mainDriver.find_element_by_xpath(
     "//select[@name='ddlDegree']/option[text()='B.TECH-CSE(CS)']"
 ).click()
-mainDriver.find_element_by_xpath("//select[@name='ddlSem']/option[text()='V']").click()
+mainDriver.find_element_by_xpath(
+    "//select[@name='ddlSem']/option[text()='VII']").click()
 examsList = Select(
     mainDriver.find_element_by_xpath("//select[@name='ddlScheduleExam']")
 ).options
+count = 0
 for i in examsList:
-    print(i.text)
+    print(f"[{count}] {i.text}")
+    count += 1
 mainDriver.close()
+
 if len(examsList) > 3:
-    print("Result for SEM V has been declared.")
+    print("Result for SEM VII has been declared.")
     sendMail()
 else:
     print("Result has not yet been declared.")
