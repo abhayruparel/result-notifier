@@ -3,7 +3,7 @@ from selenium.webdriver.common.keys import Keys
 import time
 from PIL import Image
 import os
-
+# trigger cron jobs
 
 def generateImage(filename):
     driver = webdriver.Chrome()
